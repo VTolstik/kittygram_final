@@ -12,26 +12,22 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
   backend:
-    build: ./backend/
+    image: tolstik/kittygram_backend
     env_file: .env
-    volumes:
-      - static:/static/
-      - media:/app/media/
-    depends_on:
-      - db
-  frontend:
-    env_file: .env
-    build: ./frontend/
-    command: cp -r /app/build/. /static/
     volumes:
       - static:/static
+      - media:/app/media/
+  frontend:
+    image: tolstik/kittygram_frontend
+    env_file: .env
+    command: cp -r /app/build/. /frontend_static/
+    volumes:
+      - static:/frontend_static
   gateway:
-    build: ./nginx/
+    image: tolstik/kittygram_gateway
     env_file: .env
     volumes:
       - static:/static
       - media:/app/media/
     ports:
       - 9000:80
-    depends_on:
-      - backend
