@@ -9,7 +9,7 @@
 •	djangorestframework==3.12.4
 •	nginx
 •	gunicorn==20.1.0
-• djoser==2.1.0
+•	djoser==2.1.0
 
 ## Автор
 [@vtolstik](https://github.com/vtolstik)
