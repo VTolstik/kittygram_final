@@ -118,3 +118,4 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 
 }
+

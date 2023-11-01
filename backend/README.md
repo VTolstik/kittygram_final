@@ -16,17 +16,9 @@ Cоздать и активировать виртуальное окружен�
 python3 -m venv env
 ```
 
-* Если у вас Linux/macOS
+Если у вас Linux/macOS
 
-    ```
-    source env/bin/activate
-    ```
-
-* Если у вас windows
-
-    ```
-    source env/scripts/activate
-    ```
+Если у вас windows
 
 ```
 python3 -m pip install --upgrade pip
@@ -48,4 +40,12 @@ python3 manage.py migrate
 
 ```
 python3 manage.py runserver
+```
+
+```
+source env/scripts/activate
+```
+
+```
+source env/bin/activate
 ```
