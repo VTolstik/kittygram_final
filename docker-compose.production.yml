@@ -15,19 +15,23 @@ services:
     image: tolstik/kittygram_backend
     env_file: .env
     volumes:
-      - static:/static
+      - static:/static/
       - media:/app/media/
+    depends_on:
+      - db
   frontend:
     image: tolstik/kittygram_frontend
     env_file: .env
-    command: cp -r /app/build/. /frontend_static/
+    command: cp -r /app/build/. /static/
     volumes:
-      - static:/frontend_static
+      - static:/static
   gateway:
     image: tolstik/kittygram_gateway
     env_file: .env
+    ports:
+      - 9000:80
     volumes:
       - static:/static
       - media:/app/media/
-    ports:
-      - 9000:80
+    depends_on:
+      - backend
