@@ -15,7 +15,7 @@ services:
     image: tolstik/kittygram_backend
     env_file: .env
     volumes:
-      - static:/static/
+      - static:/static
       - media:/media/
     depends_on:
       - db
@@ -31,7 +31,7 @@ services:
     ports:
       - 9000:80
     volumes:
-      - static:/static/
+      - static:/static
       - media:/media/
     depends_on:
       - backend
