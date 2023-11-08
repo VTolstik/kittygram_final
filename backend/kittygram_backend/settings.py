@@ -16,7 +16,6 @@ ALLOWED_HOSTS = ['158.160.30.39', '127.0.0.1', 'localhost', 'kitty-ru.sytes.net'
 DEBUG = True
 # DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
